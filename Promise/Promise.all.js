@@ -26,23 +26,19 @@ const promiseAll = (promises) => {
     })
 }
 
-const createPromise = (value, time) => {
-    return new Promise((resolve) => {
-        // const randomValue = Math.floor(Math.random() * 100);
-        setTimeout(() => {
-            resolve(value);
-        }, time);
+const createPromise = (time) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => time > 5000 ? reject(time) : resolve(time), time);
     })
 }
 
 const result = promiseAll([
-    createPromise(10, 1000),
-    createPromise(20, 700),
-    createPromise(30, 450),
-    createPromise(40, 560),
+    createPromise(4000),
+    createPromise(1000),
+    createPromise(2000),
+    createPromise(2050),
     69,
     Promise.resolve(55),
-    Promise.reject("Failing....")
 ])
 
 result.then(console.log).catch(console.error);
