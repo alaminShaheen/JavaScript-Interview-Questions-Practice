@@ -23,6 +23,7 @@ promiseAllSettled([
     createPromise(2000),
     createPromise(5020),
     56,
+    "hello",
     Promise.resolve(45),
     Promise.reject(29),
 ]).then(console.log).catch(console.error);
