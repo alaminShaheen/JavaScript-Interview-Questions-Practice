@@ -27,3 +27,9 @@ promiseAllSettled([
     Promise.resolve(45),
     Promise.reject(29),
 ]).then(console.log).catch(console.error);
+
+promiseAllSettled([
+    Promise.reject(67),
+    Promise.reject(28),
+    Promise.reject(29),
+]).then(console.log).catch(console.error);
