@@ -1,5 +1,16 @@
 import {createPromise} from "../Utilities.js";
 
+// ● It returns a promise.
+// ● The returned promise fulfills or rejects as soon as any one of
+// the input promises fulfills or rejects.
+// ● Returned promise resolves with the value of the input
+// promise or rejects with the reason of the input promise.
+
+/**
+ *
+ * @param promises - Array of promises or any other non promise values
+ * @returns {Promise<Array<any>>}
+ */
 const promiseRace = (promises) => {
     return new Promise((resolve, reject) => {
         promises.forEach(promise => {

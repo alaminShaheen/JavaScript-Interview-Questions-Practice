@@ -3,6 +3,11 @@ import {createPromise} from "../Utilities.js";
 // ● The returned promise is resolved as soon as any of the input promises resolves.
 // ● Else if all the input promises are rejected then the returned promise is rejected with the array of all the input promises reasons.
 
+/**
+ *
+ * @param promises - Array of promises or any other non promise values
+ * @returns {Promise<Array<any>>}
+ */
 const promiseAny = (promises) => {
     return new Promise((resolve, reject) => {
         const aggregateErrors = [];

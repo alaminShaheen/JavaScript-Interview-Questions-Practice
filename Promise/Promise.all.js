@@ -7,6 +7,11 @@ import {createPromise} from "../Utilities.js";
 // ● The results are returned in the same order as the promises are in
 // the given array.
 
+/**
+ *
+ * @param promises - Array of promises or any other non promise values
+ * @returns {Promise<Array<any>>}
+ */
 const promiseAll = (promises) => {
     return new Promise((resolve, reject) => {
         const output = Array(promises.length);
