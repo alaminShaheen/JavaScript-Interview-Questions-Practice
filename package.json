@@ -1,6 +1,7 @@
 {
-  "name": "JavaScript Interview Questions Practice",
+  "name": "javascript-interview-practice",
   "version": "1.0.0",
   "dependencies": {
-  }
+  },
+  "type": "module"
 }

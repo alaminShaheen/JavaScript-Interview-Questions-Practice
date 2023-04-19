@@ -1,3 +1,4 @@
+import {createPromise} from "../Utilities.js";
 // ● Function takes an array of promises as input and returns a new promise.
 // ● The returned promise is resolved as soon as any of the input promises resolves.
 // ● Else if all the input promises are rejected then the returned promise is rejected with the array of all the input promises reasons.
@@ -18,13 +19,7 @@ const promiseAny = (promises) => {
     })
 }
 
-const createPromise = (time) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => time > 5000 ? reject(time) : resolve(time), time);
-    })
-}
-
-const result = promiseAny([
+promiseAny([
     createPromise(5002),
     createPromise(5003),
     createPromise(9000),
